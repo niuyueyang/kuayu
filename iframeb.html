@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			window.onmessage=function(e){
+				console.log(e.data);
+				e.source.postMessage('我是来自于b页面',e.origin);
+			}
+		</script>
+	</body>
+</html>

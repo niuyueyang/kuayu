@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<iframe src="http://127.0.0.1:8020/kuayu/iframeb.html" frameborder="0" onload="load()" id="frame"></iframe>
+		<script>
+			var frame=document.querySelector('#frame');
+			function load(){
+				frame.contentWindow.postMessage('我来自于A页面','http://127.0.0.1:8020');
+				window.onmessage=function(e){
+					console.log(e.data)
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			document.cookie='nyy';
+			var xhr=new XMLHttpRequest;
+			xhr.open('GET','http://localhost:4000/getData',true);
+			xhr.setRequestHeader('name','aaa');
+			xhr.withCredentials=true;
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4){
+					if(xhr.status>=200&&xhr.status<300||xhr.status==304){
+						console.log(xhr.response);//返回的数据
+						console.log(xhr.getResponseHeader('name'));//返回的头
+					}
+				}
+			}
+			xhr.send();
+		</script>
+	</body>
+</html>

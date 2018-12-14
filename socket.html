@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var socket=new WebSocket('ws://localhost:4000');
+			socket.onopen=function(){
+				socket.send('我来自于客户端');
+			}
+			socket.onmessage=function(e){
+				console.log(e)
+			}
+		</script>
+	</body>
+</html>
